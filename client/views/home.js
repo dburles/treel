@@ -53,7 +53,7 @@ Template.note.helpers({
     return ! this.body || this._id === Session.get('editing');
   },
   body: function() {
-    if (Session.get('editing'))
+    if (Session.get('editing') === this._id)
       return this.body;
     else
       return new Handlebars.SafeString(this.body.replace(/\n/g, '<br>'));
