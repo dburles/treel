@@ -27,19 +27,18 @@
     <div class="note">
       {{#if formVisible}}
         <form>
-          <textarea class="form-control" type="text" name="note" placeholder="...">{{body}}</textarea>
+          <textarea rows="6" class="form-control" type="text" name="note" placeholder="...">{{body}}</textarea>
         </form>
       {{else}}
-        <div class="body">{{body}}</div>
+        <div class="body edit">{{body}}</div>
       {{/if}}
 
-      <div class="note-controls-wrapper">
-        <div class="note-controls">
-          <i class="fa fa-2x fa-pencil-square edit center"></i>
-          {{#unless hasNotes}}
-            <i class="fa fa-2x fa-times-circle delete left"></i>
-          {{/unless}}
-        </div>
+      
+      <div class="note-controls">
+        <!-- <i class="fa fa-2x fa-pencil-square edit center"></i> -->
+        {{#unless hasNotes}}
+          <i class="fa fa-2x fa-times-circle delete left"></i>
+        {{/unless}}
       </div>
     </div>
   </td>

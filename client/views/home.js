@@ -5,13 +5,14 @@ Template.items.helpers({
 });
 
 Template.note.events({
-  'keyup textarea': function(event, template) {
+  // 'keydown textarea': function(event) {
+  //   // disable return
+  //   if (event.keyCode === 13)
+  //     event.preventDefault();
+  // },
+  'blur textarea': function(event, template) {
     event.preventDefault();
 
-    if (event.keyCode !== 13)
-      return;
-
-    // remove the return somehow
     var body = template.find('textarea').value;
 
     if (! body)
@@ -50,18 +51,24 @@ Template.note.helpers({
   },
   formVisible: function() {
     return ! this.body || this._id === Session.get('editing');
+  },
+  body: function() {
+    if (Session.get('editing'))
+      return this.body;
+    else
+      return new Handlebars.SafeString(this.body.replace(/\n/g, '<br>'));
   }
 });
 
-Meteor.startup(function() {
-  $('textarea').expanding();
-});
+// Meteor.startup(function() {
+//   $('textarea').expanding();
+// });
 
-Template.note.rendered = function() {
-  var textarea = $(this.find('textarea'));
-  if (textarea)
-    textarea.expanding();
-};
+// Template.note.rendered = function() {
+//   var textarea = $(this.find('textarea'));
+//   if (textarea)
+//     textarea.expanding();
+// };
 
 Template.item.events({
   'click .go-down': function(event, template) {

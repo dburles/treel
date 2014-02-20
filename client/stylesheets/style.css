@@ -3,6 +3,9 @@ body {
   background: #666;
   background: url('/images/bg.jpg') -100px -100px;
 }
+table tr td {
+  vertical-align: top;
+}
 .note {
   position: relative;
   width: 200px;
@@ -14,7 +17,12 @@ body {
   overflow: hidden;
 }
 .note .body {
-  padding: 10px;
+  /*height: 80%;*/
+  padding: 7px 13px;
+}
+.note textarea {
+  background: #000;
+  color: #DDD;
 }
 .item-controls {
   position: relative;
@@ -27,7 +35,7 @@ body {
 }
 .item-controls .go-right {
   position: absolute;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 .note-controls-wrapper {
   position: absolute;
@@ -35,16 +43,19 @@ body {
   bottom: 33px;
 }
 .note-controls {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   margin: 10px;
   color: rgba(153, 153, 153, 0.66);
 }
-.edit {
+/*.edit {
   position: absolute;
 }
 .delete {
   position: absolute;
-}
+}*/
+
 .top{top:0}
 .middle{top:50%;margin-top:-10px;/*half of the .box height*/}
 .bottom{bottom:0}
