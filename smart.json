@@ -1,0 +1,14 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor.git",
+    "branch": "shark"
+  },
+  "packages": {
+    "bootstrap-3": {},
+    "font-awesome": {},
+    "iron-router": {
+      "git": "https://github.com/EventedMind/iron-router.git",
+      "branch": "cap-fix"
+    }
+  }
+}

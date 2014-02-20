@@ -1,0 +1,26 @@
+<template name="items">
+  {{#each items}}
+    {{> item}}
+  {{/each}}
+</template>
+
+<template name="item">
+  <div class="col-sm-3">
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <form>
+          <div class="form-group">
+            <input class="form-control" type="text" name="note">
+            <!-- <input class="form-control" type="submit" value="Add"> -->
+          </div>
+        </form>
+
+        <div>
+          <i class="fa fa-toggle-down pull-left"></i>
+          <i class="fa fa-toggle-right pull-right"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,34 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor.git",
+    "branch": "shark",
+    "commit": "1d24565fb5ed6a5571cd6c037f1a60a092be8eaa"
+  },
+  "dependencies": {
+    "basePackages": {
+      "bootstrap-3": {},
+      "font-awesome": {},
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "branch": "cap-fix"
+      }
+    },
+    "packages": {
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
+        "tag": "v3.1.0-1",
+        "commit": "329dccb08bfc18c635676dea600ac9953162cda9"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.0.3",
+        "commit": "61e9361384347547ae144f8228faa4deffda23db"
+      },
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "branch": "cap-fix",
+        "commit": "304993216ef86d734119a64e25938db5ae7332e6"
+      }
+    }
+  }
+}
