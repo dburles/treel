@@ -24,22 +24,24 @@
 
 <template name="note">
   <td>
-    <div class="note">
+    <div class="note {{#if checked}}checked{{/if}} {{#unless isNote}}item{{/unless}}">
       {{#if formVisible}}
         <form>
           <textarea rows="6" class="form-control" type="text" name="note" placeholder="...">{{body}}</textarea>
         </form>
       {{else}}
-        <div class="body edit">{{body}}</div>
+        <div class="body edit">
+          {{body}}
+        </div>
       {{/if}}
 
-      
-      <div class="note-controls">
-        <!-- <i class="fa fa-2x fa-pencil-square edit center"></i> -->
-        {{#unless hasNotes}}
-          <i class="fa fa-2x fa-times-circle delete left"></i>
-        {{/unless}}
-      </div>
+      {{#if isNote}}
+        <i class="fa fa-2x fa-check-circle check left note-control-item"></i>
+      {{/if}}
+
+      {{#unless hasNotes}}
+        <i class="fa fa-2x fa-times-circle delete right note-control-item"></i>
+      {{/unless}}
     </div>
   </td>
 </template>

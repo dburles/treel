@@ -39,10 +39,16 @@ Template.note.events({
   },
   'click .edit': function(event, template) {
     Session.set('editing', this._id);
+  },
+  'click .check': function(event, template) {
+    Notes.update(this._id, { $set: { checked: (this.checked ? false : true) }});
   }
 });
 
 Template.note.helpers({
+  isNote: function() {
+    return this.itemId;
+  },
   hasNotes: function() {
     if (! this.itemId)
       if (this.notes().count() > 0)

@@ -1,10 +1,15 @@
 body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
   margin: 10px;
   background: #666;
   background: url('/images/bg.jpg') -100px -100px;
 }
 table tr td {
   vertical-align: top;
+}
+.item .body {
+  font-size: 25px;
 }
 .note {
   position: relative;
@@ -15,6 +20,9 @@ table tr td {
   margin: 10px;
   opacity: 0.8;
   overflow: hidden;
+}
+.checked {
+  opacity: 0.4;
 }
 .note .body {
   /*height: 80%;*/
@@ -42,12 +50,12 @@ table tr td {
   width: 100%;
   bottom: 33px;
 }
-.note-controls {
+.note-control-item {
+  color: rgba(153, 153, 153, 0.66);
   position: absolute;
   bottom: 0;
   right: 0;
   margin: 10px;
-  color: rgba(153, 153, 153, 0.66);
 }
 /*.edit {
   position: absolute;
