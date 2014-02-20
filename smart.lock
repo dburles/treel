@@ -11,7 +11,8 @@
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
         "branch": "cap-fix"
-      }
+      },
+      "collection-helpers": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -28,6 +29,11 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "branch": "cap-fix",
         "commit": "304993216ef86d734119a64e25938db5ae7332e6"
+      },
+      "collection-helpers": {
+        "git": "https://github.com/dburles/meteor-collection-helpers.git",
+        "tag": "v0.2.3",
+        "commit": "52c4c692421acea557fb329f43f65ed11b4832df"
       }
     }
   }
