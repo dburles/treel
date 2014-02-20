@@ -1,0 +1,54 @@
+body {
+  margin: 10px;
+  background: #666;
+  background: url('/images/bg.jpg') -100px -100px;
+}
+.note {
+  position: relative;
+  width: 200px;
+  min-height: 200px;
+  background: #FFF;
+  border-radius: 5px;
+  margin: 10px;
+  opacity: 0.8;
+  overflow: hidden;
+}
+.note .body {
+  padding: 10px;
+}
+.item-controls {
+  position: relative;
+  min-height: 200px;
+  color: #FFF;
+  opacity: 0.3;
+}
+.item-controls .go-down {
+  position: absolute;
+}
+.item-controls .go-right {
+  position: absolute;
+  margin-top: -20px;
+}
+.note-controls-wrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 33px;
+}
+.note-controls {
+  position: relative;
+  margin: 10px;
+  color: rgba(153, 153, 153, 0.66);
+}
+.edit {
+  position: absolute;
+}
+.delete {
+  position: absolute;
+}
+.top{top:0}
+.middle{top:50%;margin-top:-10px;/*half of the .box height*/}
+.bottom{bottom:0}
+
+.left{left:0;}
+.center{left:50%;margin-left:-10px;/*half of the .box width*/}
+.right{right:0;}

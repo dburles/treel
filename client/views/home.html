@@ -1,26 +1,46 @@
 <template name="items">
-  {{#each items}}
-    {{> item}}
-  {{/each}}
+  <table>
+    {{#each items}}
+      {{> item}}
+    {{/each}}
+  </table>
 </template>
 
 <template name="item">
-  <div class="col-sm-3">
-    <div class="panel panel-default">
-      <div class="panel-body">
+  <tr>
+    {{> note}}
 
+    {{#each notes}}
+      {{> note}}
+    {{/each}}
+    <td>
+      <div class="item-controls">
+        <i class="fa fa-3x fa-chevron-circle-right go-right middle"></i>
+        <i class="fa fa-2x fa-chevron-circle-down go-down bottom"></i>
+      </div>
+    </td>
+  </tr>
+</template>
+
+<template name="note">
+  <td>
+    <div class="note">
+      {{#if formVisible}}
         <form>
-          <div class="form-group">
-            <input class="form-control" type="text" name="note">
-            <!-- <input class="form-control" type="submit" value="Add"> -->
-          </div>
+          <textarea class="form-control" type="text" name="note" placeholder="...">{{body}}</textarea>
         </form>
+      {{else}}
+        <div class="body">{{body}}</div>
+      {{/if}}
 
-        <div>
-          <i class="fa fa-toggle-down pull-left"></i>
-          <i class="fa fa-toggle-right pull-right"></i>
+      <div class="note-controls-wrapper">
+        <div class="note-controls">
+          <i class="fa fa-2x fa-pencil-square edit center"></i>
+          {{#unless hasNotes}}
+            <i class="fa fa-2x fa-times-circle delete left"></i>
+          {{/unless}}
         </div>
       </div>
     </div>
-  </div>
+  </td>
 </template>
