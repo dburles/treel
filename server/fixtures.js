@@ -11,7 +11,7 @@ Meteor.startup(function() {
   users.forEach(function(user) {
     var items = Items.find({ userId: user._id });
     var itemsWithoutRank = Items.find({ userId: user._id, rank: { $exists: false }});
-    console.log(items.count(), itemsWithoutRank.count());
+    // console.log(items.count(), itemsWithoutRank.count());
     if (items.count() === itemsWithoutRank.count()) {
 
       _.each(items.fetch(), function(item, index) {
