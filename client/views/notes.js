@@ -59,10 +59,13 @@ Template.note.helpers({
     return this.itemId;
   },
   canDelete: function() {
-    if (! this.itemId)
-      if (this.notes().count() === 0 && Items.find().count() !== 1)
-        return true;
-    return false;
+    if (! this.itemId) {
+      if (this.notes().count() > 0)
+        return false;
+      if (Items.find().count() === 1)
+        return false;
+    }
+    return true;
   },
   formVisible: function() {
     return ! this.body || this._id === Session.get('editing');
