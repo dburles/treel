@@ -1,7 +1,7 @@
 SimpleRationalRanks = {
-  beforeFirst: function (firstRank) { return firstRank - 1; },
-  between: function (beforeRank, afterRank) { return (beforeRank + afterRank) / 2; },
-  afterLast: function (lastRank) { return lastRank + 1; }
+  beforeFirst: function (firstRank) { return parseInt(firstRank) - 1; },
+  between: function (beforeRank, afterRank) { return (parseInt(beforeRank) + parseInt(afterRank)) / 2; },
+  afterLast: function (lastRank) { return parseInt(lastRank) + 1; }
 };
 
 Template.items.helpers({
