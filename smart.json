@@ -10,6 +10,7 @@
       "git": "https://github.com/EventedMind/iron-router.git",
       "branch": "cap-fix"
     },
-    "collection-helpers": {}
+    "collection-helpers": {},
+    "collection-hooks": {}
   }
 }

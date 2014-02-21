@@ -1,0 +1,6 @@
+.alert-fixed {
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+  text-align: center;
+}

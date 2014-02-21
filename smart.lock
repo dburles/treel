@@ -2,7 +2,7 @@
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
     "branch": "shark",
-    "commit": "1d24565fb5ed6a5571cd6c037f1a60a092be8eaa"
+    "commit": "ea5050497da1d24194c44c5d27a91e9979e839ba"
   },
   "dependencies": {
     "basePackages": {
@@ -12,7 +12,8 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "branch": "cap-fix"
       },
-      "collection-helpers": {}
+      "collection-helpers": {},
+      "collection-hooks": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -34,6 +35,11 @@
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
         "tag": "v0.2.3",
         "commit": "52c4c692421acea557fb329f43f65ed11b4832df"
+      },
+      "collection-hooks": {
+        "git": "https://github.com/matb33/meteor-collection-hooks.git",
+        "tag": "v0.6.2",
+        "commit": "29484b2110206be93b01c6d11ce06ec9208de7bd"
       }
     }
   }

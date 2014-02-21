@@ -1,6 +1,15 @@
 Template.items.helpers({
   items: function() {
     return Items.find();
+  },
+  email: function() {
+    return Meteor.user().email();
+  }
+});
+
+Template.items.events({
+  'click .sign-out': function() {
+    Meteor.logout();
   }
 });
 
