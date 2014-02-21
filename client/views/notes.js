@@ -3,7 +3,7 @@ Template.items.helpers({
     return Items.find();
   },
   email: function() {
-    return Meteor.user().email();
+    return Meteor.user() && Meteor.user().email();
   }
 });
 
