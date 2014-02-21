@@ -13,7 +13,8 @@
         "branch": "cap-fix"
       },
       "collection-helpers": {},
-      "collection-hooks": {}
+      "collection-hooks": {},
+      "lazy": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -40,6 +41,11 @@
         "git": "https://github.com/matb33/meteor-collection-hooks.git",
         "tag": "v0.6.2",
         "commit": "29484b2110206be93b01c6d11ce06ec9208de7bd"
+      },
+      "lazy": {
+        "git": "https://github.com/dburles/meteor-lazy.git",
+        "tag": "v0.1.0",
+        "commit": "42b55687f1bb0f853fb650d7255115960b126748"
       }
     }
   }

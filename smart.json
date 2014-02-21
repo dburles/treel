@@ -11,6 +11,7 @@
       "branch": "cap-fix"
     },
     "collection-helpers": {},
-    "collection-hooks": {}
+    "collection-hooks": {},
+    "lazy": {}
   }
 }

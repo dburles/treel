@@ -1,11 +1,42 @@
+SimpleRationalRanks = {
+  beforeFirst: function (firstRank) { return firstRank - 1; },
+  between: function (beforeRank, afterRank) { return (beforeRank + afterRank) / 2; },
+  afterLast: function (lastRank) { return lastRank + 1; }
+};
+
 Template.items.helpers({
   items: function() {
-    return Items.find();
+    return Items.find({}, { sort: { rank: 1 }});
   },
   email: function() {
     return Meteor.user() && Meteor.user().email();
   }
 });
+
+Template.items.rendered = function() {
+  $('table tbody').sortable({
+    handle: 'i.move',
+    stop: function (event, ui) {
+      var el = ui.item.get(0), before = ui.item.prev().get(0), after = ui.item.next().get(0);
+
+      if (! before) { // moving to the top of the list
+        newRank = SimpleRationalRanks.beforeFirst(
+          $(after).attr('data-rank'));
+
+      } else if (! after) { // moving to the bottom of the list
+        newRank = SimpleRationalRanks.afterLast(
+          $(before).attr('data-rank'));
+
+      } else {
+        newRank = SimpleRationalRanks.between(
+          $(before).attr('data-rank'),
+          $(after).attr('data-rank'));
+      }
+
+      Items.update($(el).attr('data-id'), {$set: {rank: newRank}});
+    }
+  }).disableSelection();
+};
 
 Template.items.events({
   'click .sign-out': function() {

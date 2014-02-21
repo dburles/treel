@@ -11,3 +11,4 @@ iron-router
 collection-helpers
 accounts-password
 collection-hooks
+lazy

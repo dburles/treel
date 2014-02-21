@@ -3,14 +3,16 @@
     <span class="email">{{email}}</span> <a href="" class="sign-out"><i class="fa fa-2x fa-sign-out"></i></a>
   </div>
   <table>
+    <tbody>
     {{#each items}}
       {{> item}}
     {{/each}}
+    </tbody>
   </table>
 </template>
 
 <template name="item">
-  <tr>
+  <tr data-id="{{_id}}" data-rank="{{rank}}" class="sortable">
     {{> note}}
 
     {{#each notes}}
@@ -40,6 +42,8 @@
 
       {{#if isNote}}
         <i class="fa fa-2x fa-check-circle check left note-control-item"></i>
+      {{else}}
+        <i class="fa fa-arrows move left note-control-item"></i>
       {{/if}}
 
       {{#if canDelete}}

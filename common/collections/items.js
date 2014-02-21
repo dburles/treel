@@ -22,6 +22,8 @@ Items.allow({
 Items.before.insert(function(userId, doc) {
   doc.userId = userId;
   doc.createdAt = Date.now();
+  var rankItem = Items.findOne({ userId: Meteor.userId() }, { sort: { rank: -1 }});
+  doc.rank = rankItem && (rankItem.rank + 1) || 0;
 });
 
 Items.before.update(function(userId, doc, fieldNames, modifier, options) {
