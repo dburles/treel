@@ -42,9 +42,9 @@
         <i class="fa fa-2x fa-check-circle check left note-control-item"></i>
       {{/if}}
 
-      {{#unless hasNotes}}
+      {{#if canDelete}}
         <i class="fa fa-2x fa-times-circle delete right note-control-item"></i>
-      {{/unless}}
+      {{/if}}
     </div>
   </td>
 </template>

@@ -58,9 +58,9 @@ Template.note.helpers({
   isNote: function() {
     return this.itemId;
   },
-  hasNotes: function() {
+  canDelete: function() {
     if (! this.itemId)
-      if (this.notes().count() > 0)
+      if (this.notes().count() === 0 && Items.find().count() !== 1)
         return true;
     return false;
   },
@@ -71,7 +71,7 @@ Template.note.helpers({
     if (Session.get('editing') === this._id)
       return this.body;
     else
-      return new Handlebars.SafeString(this.body.replace(/\n/g, '<br>'));
+      return this.body && new Handlebars.SafeString(this.body.replace(/\n/g, '<br>'));
   }
 });
 
