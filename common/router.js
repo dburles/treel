@@ -6,14 +6,14 @@ Router.configure({
 
 Router.map(function() {
   this.route('home', {
-    before: function() {
+    after: function() {
       if (Meteor.user())
         Router.go('items');
     },
-    path: '/auth'
+    path: '/'
   });
   this.route('items', {
-    path: '/',
+    path: '/dashboard',
     before: function() {
       this.subscribe('items').wait();
       this.subscribe('notes').wait();
@@ -23,11 +23,10 @@ Router.map(function() {
         Meteor.call('onboarding');
     }
   });
-  this.route('applicationLoading', { path: '/test' });
 });
 
 var requireLogin = function() {
-  if (! Meteor.user())
+  if (! Meteor.user() && ! Meteor.loggingIn())
     Router.go('home');
 };
 
