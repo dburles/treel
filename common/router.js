@@ -1,5 +1,7 @@
 Router.configure({
-  layoutTemplate: 'layout'
+  layoutTemplate: 'layout',
+  notFoundTemplate: 'applicationNotFound',
+  loadingTemplate: 'applicationLoading'
 });
 
 Router.map(function() {
@@ -8,19 +10,20 @@ Router.map(function() {
       if (Meteor.user())
         Router.go('items');
     },
-    path: '/'
+    path: '/auth'
   });
   this.route('items', {
-    path: '/notes',
+    path: '/',
     before: function() {
       this.subscribe('items').wait();
-      this.subscribe('notes');
+      this.subscribe('notes').wait();
     },
     after: function() {
       if (this.ready() && Meteor.user() && Items.find().count() === 0)
-        Items.insert({ body: 'Welcome' });
+        Meteor.call('onboarding');
     }
   });
+  this.route('applicationLoading', { path: '/test' });
 });
 
 var requireLogin = function() {

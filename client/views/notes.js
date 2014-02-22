@@ -106,6 +106,9 @@ Template.note.helpers({
       return this.body;
     else
       return this.body && new Handlebars.SafeString(this.body.replace(/\n/g, '<br>'));
+  },
+  canCheck: function() {
+    return !!this.body;
   }
 });
 

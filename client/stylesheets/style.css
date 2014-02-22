@@ -6,6 +6,11 @@ html, body {
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
+  /*background: url('http://subtlepatterns.com/patterns/mooning.png');*/
+  
+
+  /*background: #54666B url('/images/Dark-Clouds-of-the-Carina-Nebula.jpg');*/
+
   background: url('/images/bg.jpg') -100px -100px;
 /*  background-image: -webkit-gradient(
     linear,
@@ -93,7 +98,6 @@ table tr td {
   color: rgba(153, 153, 153, 0.66);
   position: absolute;
   bottom: 0;
-  right: 0;
   margin: 10px;
 }
 /*.edit {

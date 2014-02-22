@@ -1,0 +1,16 @@
+// various mixins that make it simpler to do common things
+#helpers {
+  .position(@type; @top: auto; @right: auto; @bottom: auto; @left: auto; @width: auto; @height: auto) {
+    position: @type;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+    width: @width;
+    height: @height;
+  }
+
+  .fill-with-absolute-position() {
+    #helpers > .position(absolute, 0, 0, 0, 0);
+  }
+}

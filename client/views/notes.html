@@ -41,7 +41,9 @@
       {{/if}}
 
       {{#if isNote}}
-        <i class="fa fa-2x fa-check-circle check left note-control-item"></i>
+        {{#if canCheck}}
+          <i class="fa fa-2x fa-check-circle check left note-control-item"></i>
+        {{/if}}
       {{else}}
         <i class="fa fa-arrows move left note-control-item"></i>
       {{/if}}
