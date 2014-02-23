@@ -11,7 +11,13 @@ body {
 
   /*background: #54666B url('/images/Dark-Clouds-of-the-Carina-Nebula.jpg');*/
 
-  background: url('/images/bg.jpg') -100px -100px;
+  /*background: url('/images/bg.jpg') -100px -100px;*/
+
+  /*background: #1B503D; green*/ 
+  /*background: #333;*/
+  /*background: url('/images/texture2.jpg');*/
+
+
 /*  background-image: -webkit-gradient(
     linear,
     left top,
@@ -24,7 +30,10 @@ body {
   background-image: -webkit-linear-gradient(bottom, #5BAAEB 0%, #F2D9AF 100%);
   background-image: -ms-linear-gradient(bottom, #5BAAEB 0%, #F2D9AF 100%);
   background-image: linear-gradient(to bottom, #5BAAEB 0%, #F2D9AF 100%);*/
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
+}
+.action {
+  cursor: pointer;
 }
 .container {
   padding-bottom: 20px;
@@ -41,6 +50,20 @@ body {
 }
 .topbar .email {
   vertical-align: super;
+}
+.footer {
+  text-align: center;
+  color: #FFF;
+  padding: 10px;
+}
+.footer .backgrounds {
+  list-style-type: none;
+  padding: 0;
+}
+.footer .backgrounds li {
+  padding: 2px;
+  display: inline-block;
+  /*vertical-align: super;*/
 }
 
 /*.notes {

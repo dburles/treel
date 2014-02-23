@@ -9,6 +9,16 @@
     {{/each}}
     </tbody>
   </table>
+  <div class="footer">
+    <ul class="backgrounds">
+      <li>
+        <i class="fa fa-desktop"></i>
+      </li>
+      {{#each backgrounds}}
+        <li class="set-wp action" data-name="{{name}}">{{count}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>
 
 <template name="item">
@@ -20,8 +30,8 @@
     {{/each}}
     <td>
       <div class="item-controls">
-        <i class="fa fa-3x fa-chevron-circle-right go-right middle"></i>
-        <i class="fa fa-2x fa-chevron-circle-down go-down bottom"></i>
+        <i class="fa fa-3x fa-chevron-circle-right go-right middle action"></i>
+        <i class="fa fa-2x fa-chevron-circle-down go-down bottom action"></i>
       </div>
     </td>
   </tr>
@@ -42,14 +52,14 @@
 
       {{#if isNote}}
         {{#if canCheck}}
-          <i class="fa fa-2x fa-check-circle check left note-control-item"></i>
+          <i class="fa fa-2x fa-check-circle check left note-control-item action"></i>
         {{/if}}
       {{else}}
-        <i class="fa fa-arrows move left note-control-item"></i>
+        <i class="fa fa-arrows move left note-control-item action"></i>
       {{/if}}
 
       {{#if canDelete}}
-        <i class="fa fa-2x fa-times-circle delete right note-control-item"></i>
+        <i class="fa fa-2x fa-times-circle delete right note-control-item action"></i>
       {{/if}}
     </div>
   </td>
