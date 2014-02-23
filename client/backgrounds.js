@@ -17,6 +17,24 @@ var backgrounds = {
   },
   'green': {
     color: '#1B503D'
+  },
+  'grungy 1': {
+    image: 'grungy/01.PNG'
+  },
+  'grungy 2': {
+    image: 'grungy/02.PNG'
+  },
+  'grungy 3': {
+    image: 'grungy/03.PNG'
+  },
+  'grungy 4': {
+    image: 'grungy/04.PNG'
+  },
+  'grungy 5': {
+    image: 'grungy/05.PNG'
+  },
+  'grungy 6': {
+    image: 'grungy/06.PNG'
   }
 };
 
