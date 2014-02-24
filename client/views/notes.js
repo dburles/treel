@@ -113,7 +113,7 @@ Template.note.helpers({
 });
 
 Template.item.events({
-  'click .go-down': function(event, template) {    
+  'click .go-down': function(event, template) {
     event.preventDefault();
     Session.set('hasMadeNew', true);
     Items.insert({});
