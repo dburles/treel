@@ -94,7 +94,7 @@ table tr td {
 }
 .note .body {
   /*height: 80%;*/
-  margin: 7px 13px;
+  padding: 7px 13px;
 }
 .note textarea {
   font-size: 15px;

@@ -40,17 +40,15 @@
 <template name="note">
   <td>
     <div class="note {{#if checked}}checked{{/if}} {{#unless isNote}}item{{/unless}} {{#if isEditing}}editing{{/if}}">
-
+      {{#if isNote}}
         <form>
           {{> textarea}}
         </form>
-
-
-      {{#if isNote}}
         {{#if canCheck}}
           <i class="fa fa-2x fa-check-circle check left note-control-item action"></i>
         {{/if}}
       {{else}}
+        <div class="body">{{body}}</div>
         <i class="fa fa-arrows move left note-control-item action"></i>
       {{/if}}
 
