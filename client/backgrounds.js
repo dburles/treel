@@ -52,7 +52,8 @@ Template.items.helpers({
 
 Template.items.events({
   'click .set-wp': function(event, template) {
-    setBackground($(event.target).attr('data-name'));
+    var name = $(event.target).attr('data-name');
+    Meteor.users.update(Meteor.userId(), { $set: { wallpaper: name }});
   }
 });
 
@@ -62,7 +63,7 @@ setBackground = function(name) {
   var bg = backgrounds[name];
   if (! bg) return;
 
-  // reset
+  // reset, seems to be broken, why?
   $('body')
     .css('background-image', '')
     .css('background-position', '')
@@ -76,7 +77,6 @@ setBackground = function(name) {
   _.each(bg.params, function(value, key) {
     $('body').css(key, value);
   });
-  Meteor.users.update(Meteor.userId(), { $set: { wallpaper: name }});
 };
 
 Meteor.startup(function() {
