@@ -81,23 +81,35 @@ table tr td {
 }
 .note {
   position: relative;
-  width: 200px;
-  min-height: 200px;
+  width: 190px;
+  min-height: 190px;
   border-radius: 5px;
   margin: 10px;
   background: rgba(255,255,255,0.8);
-  overflow: hidden;
+  /*overflow: hidden;*/
+  padding-bottom: 50px;
 }
 .checked {
   opacity: 0.4;
 }
 .note .body {
   /*height: 80%;*/
-  padding: 7px 13px;
+  margin: 7px 13px;
 }
 .note textarea {
-  background: #000;
-  color: #DDD;
+  font-size: 15px;
+  background: none;
+  border: 0;
+  padding: 10px 13px 0 13px;
+  /*background: #000;*/
+  /*color: #DDD;*/
+}
+.note textarea:focus {
+  outline: none;
+}
+.editing {
+  -webkit-box-shadow: 0 0 10px 5px #FFF;
+  box-shadow: 0 0 10px 5px #FFF;
 }
 .item-controls {
   position: relative;

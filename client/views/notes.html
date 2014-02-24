@@ -39,16 +39,12 @@
 
 <template name="note">
   <td>
-    <div class="note {{#if checked}}checked{{/if}} {{#unless isNote}}item{{/unless}}">
-      {{#if formVisible}}
+    <div class="note {{#if checked}}checked{{/if}} {{#unless isNote}}item{{/unless}} {{#if isEditing}}editing{{/if}}">
+
         <form>
-          <textarea rows="6" class="form-control" type="text" name="note" placeholder="...">{{body}}</textarea>
+          {{> textarea}}
         </form>
-      {{else}}
-        <div class="body edit">
-          {{body}}
-        </div>
-      {{/if}}
+
 
       {{#if isNote}}
         {{#if canCheck}}
@@ -63,4 +59,8 @@
       {{/if}}
     </div>
   </td>
+</template>
+
+<template name="textarea">
+  <textarea rows="6" type="text" name="note" placeholder="...">{{body}}</textarea>
 </template>
