@@ -113,12 +113,14 @@ Template.note.helpers({
 });
 
 Template.item.events({
-  'click .go-down': function(event, template) {
+  'click .go-down': function(event, template) {    
     event.preventDefault();
+    Session.set('hasMadeNew', true);
     Items.insert({});
   },
   'click .go-right': function(event, template) {
     event.preventDefault();
+    Session.set('hasMadeNew', true);
     Notes.insert({ itemId: this._id });
   }
 });
@@ -126,4 +128,6 @@ Template.item.events({
 Template.textarea.rendered = function() {
   var elem = $(this.find('textarea'));
   elem.expanding();
+  if (Session.get('hasMadeNew'))
+    elem.focus();
 };

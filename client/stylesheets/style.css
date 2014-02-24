@@ -75,11 +75,8 @@ body {
 table tr td {
   vertical-align: top;
 }
-.item .body {
-  font-size: 25px;
-  text-transform: capitalize;
-}
-.note {
+
+.box {
   position: relative;
   width: 190px;
   min-height: 190px;
@@ -92,11 +89,7 @@ table tr td {
 .checked {
   opacity: 0.4;
 }
-.note .body {
-  /*height: 80%;*/
-  padding: 7px 13px;
-}
-.note textarea {
+.box textarea {
   font-size: 15px;
   background: none;
   border: 0;
@@ -104,8 +97,12 @@ table tr td {
   /*background: #000;*/
   /*color: #DDD;*/
 }
-.note textarea:focus {
+.box textarea:focus {
   outline: none;
+}
+.item textarea {
+  font-size: 25px;
+  text-transform: capitalize;
 }
 .editing {
   -webkit-box-shadow: 0 0 10px 5px #FFF;
