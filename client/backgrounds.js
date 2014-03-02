@@ -54,6 +54,7 @@ Template.items.helpers({
 Template.items.events({
   'click .set-wp': function(event, template) {
     event.preventDefault();
+    Session.set('newItemId', '');
     var name = $(event.target).attr('data-name');
     Meteor.users.update(Meteor.userId(), { $set: { wallpaper: name }});
   }
@@ -74,8 +75,8 @@ setBackground = function(name) {
 
   _.each(bg, function(value, key) {
     if (key === 'background-image')
-      $('body').css('background-image', "url('/images/" + bg.image + "')");
-
+      return $('body').css('background-image', "url('/images/" + value + "')");
+    
     $('body').css(key, value);
   });
 };
