@@ -157,6 +157,9 @@ table tr td {
 
 
 /* strap overrides */
+.alert {
+  border-radius: 0;
+}
 .control-label {
   font-weight: normal;
 }
