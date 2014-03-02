@@ -1,43 +1,41 @@
 var backgrounds = {
   'grey': {
-    color: '#CCC'
+    background: '#CCC'
   },
   'mountains': {
-    image: 'dj1.jpg',
-    params: {
-      'background-attachment': 'fixed',
-      'background-position': '-100px -100px'
-    }
+    'background-image': 'dj1.jpg',
+    'background-attachment': 'fixed',
+    'background-position': '-100px -100px'
   },
   'texture 1': {
-    image: 'texture1.jpg'
+    'background-image': 'texture1.jpg'
   },
   'texture 2': {
-    image: 'texture2.jpg'
+    'background-image': 'texture2.jpg'
   },
   'dark grey': {
-    color: '#333'
+    background: '#333'
   },
   'green': {
-    color: '#1B503D'
+    background: '#1B503D'
   },
   'grungy 1': {
-    image: 'grungy/01.PNG'
+    'background-image': 'grungy/01.PNG'
   },
   'grungy 2': {
-    image: 'grungy/02.PNG'
+    'background-image': 'grungy/02.PNG'
   },
   'grungy 3': {
-    image: 'grungy/03.PNG'
+    'background-image': 'grungy/03.PNG'
   },
   'grungy 4': {
-    image: 'grungy/04.PNG'
+    'background-image': 'grungy/04.PNG'
   },
   'grungy 5': {
-    image: 'grungy/05.PNG'
+    'background-image': 'grungy/05.PNG'
   },
   'grungy 6': {
-    image: 'grungy/06.PNG'
+    'background-image': 'grungy/06.PNG'
   }
 };
 
@@ -67,18 +65,17 @@ setBackground = function(name) {
   var bg = backgrounds[name];
   if (! bg) return;
 
-  // reset, seems to be broken, why?
   $('body')
+    .css('background', '')
     .css('background-image', '')
     .css('background-position', '')
-    .css('background-attachment', '');
-  
-  if (bg.image)
-    $('body').css('background-image', "url('/images/" + bg.image + "')");
-  if (bg.color)
-    $('body').css('background-color', bg.color);
+    .css('background-attachment', '')
+    .css('background-color', '');
 
-  _.each(bg.params, function(value, key) {
+  _.each(bg, function(value, key) {
+    if (key === 'background-image')
+      $('body').css('background-image', "url('/images/" + bg.image + "')");
+
     $('body').css(key, value);
   });
 };
