@@ -17,6 +17,7 @@ Template.items.rendered = function() {
   $('table tbody').sortable({
     handle: 'i.move',
     stop: function (event, ui) {
+      var newRank;
       var el = ui.item.get(0), before = ui.item.prev().get(0), after = ui.item.next().get(0);
 
       if (! before) { // moving to the top of the list
@@ -56,7 +57,7 @@ Template.note.events({
   'blur textarea': function(event, template) {
     event.preventDefault();
     if (! Session.get('editing')) return;
-    
+
     var body = template.find('textarea').value;
 
     if (! body)
@@ -110,22 +111,53 @@ Template.note.helpers({
   }
 });
 
-Template.item.events({
+Template.itemControls.events({
+  'click .go-up': function(event, template) {
+    event.preventDefault();
+    
+    var before = this.rankedBefore();
+    var after = this.rankedAfter();
+    var newRank;
+
+    if (! before)
+      newRank = SimpleRationalRanks.beforeFirst(this.rank);
+    else if (! after)
+      newRank = SimpleRationalRanks.between(this.rank, before.rank);
+    else
+      newRank = SimpleRationalRanks.between(this.rank, before.rank);
+    
+    var insertId = Items.insert({ rank: newRank }, handleMethodError);
+    if (insertId) Session.set('newItemId', insertId);
+  },
   'click .go-down': function(event, template) {
     event.preventDefault();
-    Session.set('hasMadeNew', true);
-    Items.insert({}, handleMethodError);
+    
+    var before = this.rankedBefore();
+    var after = this.rankedAfter();
+    var newRank;
+
+    if (! before)
+      newRank = SimpleRationalRanks.between(this.rank, after.rank);
+    else if (! after)
+      newRank = SimpleRationalRanks.afterLast(this.rank);
+    else
+      newRank = SimpleRationalRanks.between(before.rank, after.rank);
+    
+    var insertId = Items.insert({ rank: newRank }, handleMethodError);
+    if (insertId) Session.set('newItemId', insertId);
   },
   'click .go-right': function(event, template) {
     event.preventDefault();
-    Session.set('hasMadeNew', true);
-    Notes.insert({ itemId: this._id }, handleMethodError);
+
+    var insertId = Notes.insert({ itemId: this._id }, handleMethodError);
+    if (insertId) Session.set('newItemId', insertId);
   }
 });
 
 Template.textarea.rendered = function() {
   var elem = $(this.find('textarea'));
   elem.expanding();
-  if (Session.get('hasMadeNew'))
+
+  if (Session.get('newItemId') === this.data._id)
     elem.focus();
 };

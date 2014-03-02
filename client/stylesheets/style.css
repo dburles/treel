@@ -110,16 +110,18 @@ table tr td {
 }
 .item-controls {
   position: relative;
-  min-height: 200px;
+  min-height: 190px;
   color: #FFF;
   opacity: 0.3;
+  width: 39px;
+  margin-top: 10px;
 }
 .item-controls .go-down {
   position: absolute;
 }
 .item-controls .go-right {
   position: absolute;
-  margin-top: -10px;
+  margin-top: -22px;
 }
 .note-controls-wrapper {
   position: absolute;

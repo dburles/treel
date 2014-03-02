@@ -25,16 +25,26 @@
   <tr data-id="{{_id}}" data-rank="{{rank}}" class="sortable">
     {{> note}}
 
+    {{> itemControls}}
+
     {{#each notes}}
       {{> note}}
     {{/each}}
-    <td>
-      <div class="item-controls">
-        <i class="fa fa-3x fa-chevron-circle-right go-right middle action"></i>
-        <i class="fa fa-2x fa-chevron-circle-down go-down bottom action"></i>
-      </div>
-    </td>
+  
+    {{#if notes.count}}
+      {{> itemControls}}
+    {{/if}}
   </tr>
+</template>
+
+<template name="itemControls">
+  <td>
+    <div class="item-controls">
+      <i class="fa fa-2x fa-chevron-circle-up go-up top left action"></i>
+      <i class="fa fa-3x fa-chevron-circle-right go-right middle left action"></i>
+      <i class="fa fa-2x fa-chevron-circle-down go-down bottom left action"></i>
+    </div>
+  </td>
 </template>
 
 <template name="note">
