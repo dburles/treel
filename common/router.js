@@ -8,8 +8,7 @@ Router.map(function() {
   this.route('main', {
     path: '/',
     before: function() {
-      if (Meteor.loggingIn())
-        this.render(this.options.loadingTemplate);
+      this.render(this.options.loadingTemplate);
     },
     waitOn: function() {
       return [

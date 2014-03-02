@@ -33,7 +33,7 @@ Template.items.rendered = function() {
           $(after).attr('data-rank'));
       }
 
-      Items.update($(el).attr('data-id'), {$set: {rank: newRank}});
+      Items.update($(el).attr('data-id'), {$set: {rank: newRank}}, handleMethodError);
     }
   }).disableSelection();
 };
@@ -55,16 +55,17 @@ Template.note.events({
   // },
   'blur textarea': function(event, template) {
     event.preventDefault();
-
+    if (! Session.get('editing')) return;
+    
     var body = template.find('textarea').value;
 
     if (! body)
       return;
 
     if (! this.itemId)
-      Items.update(this._id, { $set: { body: body }});
+      Items.update(this._id, { $set: { body: body }}, handleMethodError);
     else
-      Notes.update(this._id, { $set: { body: body }});
+      Notes.update(this._id, { $set: { body: body }}, handleMethodError);
 
     Session.set('editing', false);
   },
@@ -84,7 +85,7 @@ Template.note.events({
     Session.set('editing', this._id);
   },
   'click .check': function(event, template) {
-    Notes.update(this._id, { $set: { checked: (this.checked ? false : true) }});
+    Notes.update(this._id, { $set: { checked: (this.checked ? false : true) }}, handleMethodError);
   }
 });
 
@@ -113,12 +114,12 @@ Template.item.events({
   'click .go-down': function(event, template) {
     event.preventDefault();
     Session.set('hasMadeNew', true);
-    Items.insert({});
+    Items.insert({}, handleMethodError);
   },
   'click .go-right': function(event, template) {
     event.preventDefault();
     Session.set('hasMadeNew', true);
-    Notes.insert({ itemId: this._id });
+    Notes.insert({ itemId: this._id }, handleMethodError);
   }
 });
 
