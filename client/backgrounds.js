@@ -1,4 +1,7 @@
 var backgrounds = {
+  'grey': {
+    color: '#CCC'
+  },
   'mountains': {
     image: 'dj1.jpg',
     params: {
@@ -52,12 +55,13 @@ Template.items.helpers({
 
 Template.items.events({
   'click .set-wp': function(event, template) {
+    event.preventDefault();
     var name = $(event.target).attr('data-name');
     Meteor.users.update(Meteor.userId(), { $set: { wallpaper: name }});
   }
 });
 
-Session.setDefault('background', 'mountains');
+Session.setDefault('background', 'grey');
 
 setBackground = function(name) {
   var bg = backgrounds[name];
