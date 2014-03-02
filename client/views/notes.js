@@ -101,9 +101,6 @@ Template.note.helpers({
     }
     return true;
   },
-  formVisible: function() {
-    return ! this.body || this._id === Session.get('editing');
-  },
   canCheck: function() {
     return !!this.body;
   },

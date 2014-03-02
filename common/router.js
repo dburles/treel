@@ -5,18 +5,25 @@ Router.configure({
 });
 
 Router.map(function() {
-  this.route('home', {
-    after: function() {
-      if (Meteor.user())
-        Router.go('items');
-    },
-    path: '/'
-  });
-  this.route('items', {
-    path: '/dashboard',
+  this.route('main', {
+    path: '/',
     before: function() {
-      this.subscribe('items').wait();
-      this.subscribe('notes').wait();
+      if (Meteor.loggingIn())
+        this.render(this.options.loadingTemplate);
+    },
+    waitOn: function() {
+      return [
+        Meteor.subscribe('items'),
+        Meteor.subscribe('notes')
+      ];
+    },
+    action: function() {
+      if (! this.ready()) return;
+
+      if (Meteor.user())
+        this.render('items');
+      else
+        this.render('home');
     },
     after: function() {
       if (this.ready() && Meteor.user() && Items.find().count() === 0)
@@ -24,10 +31,3 @@ Router.map(function() {
     }
   });
 });
-
-var requireLogin = function() {
-  if (! Meteor.user() && ! Meteor.loggingIn())
-    Router.go('home');
-};
-
-Router.before(requireLogin, { only: 'items' });
