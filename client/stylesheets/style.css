@@ -1,36 +1,15 @@
 html, body {
-  margin:0;
-  padding:0;
-  height:100%;
-}
-body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
-  /*background: url('http://subtlepatterns.com/patterns/mooning.png');*/
-  
-
-  /*background: #54666B url('/images/Dark-Clouds-of-the-Carina-Nebula.jpg');*/
-
-  /*background: url('/images/bg.jpg') -100px -100px;*/
-
-  /*background: #1B503D; green*/ 
-  /*background: #333;*/
-  /*background: url('/images/texture2.jpg');*/
-
-
-/*  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0, #5BAAEB),
-    color-stop(1, #F2D9AF)
-  );
-  background-image: -o-linear-gradient(bottom, #5BAAEB 0%, #F2D9AF 100%);
-  background-image: -moz-linear-gradient(bottom, #5BAAEB 0%, #F2D9AF 100%);
-  background-image: -webkit-linear-gradient(bottom, #5BAAEB 0%, #F2D9AF 100%);
-  background-image: -ms-linear-gradient(bottom, #5BAAEB 0%, #F2D9AF 100%);
-  background-image: linear-gradient(to bottom, #5BAAEB 0%, #F2D9AF 100%);*/
-  /*background-attachment: fixed;*/
+}
+.treel-table {
+  margin: 0 20px 0 20px;
+}
+.treel-table tr {
+  margin: 10px 0 10px;
 }
 .action {
   cursor: pointer;
@@ -66,12 +45,6 @@ body {
   /*vertical-align: super;*/
 }
 
-/*.notes {
-  padding: 10px;
-  background: url('/images/bg.jpg') -100px -100px;
-  width: 100%;
-  height: 100%;
-}*/
 table tr td {
   vertical-align: top;
 }
@@ -109,6 +82,7 @@ table tr td {
   box-shadow: 0 0 10px 5px #FFF;
 }
 .item-controls {
+  margin-right: 20px;
   position: relative;
   min-height: 190px;
   color: #FFF;

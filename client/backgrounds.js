@@ -2,40 +2,17 @@ var backgrounds = {
   'grey': {
     background: '#CCC'
   },
-  'mountains': {
-    'background-image': 'dj1.jpg',
-    'background-attachment': 'fixed',
-    'background-position': '-100px -100px'
+  'gum': {
+    background: '#3F4158'
   },
-  'texture 1': {
-    'background-image': 'texture1.jpg'
-  },
-  'texture 2': {
-    'background-image': 'texture2.jpg'
+  'classy': {
+    background: '#3F2121'
   },
   'dark grey': {
     background: '#333'
   },
   'green': {
     background: '#1B503D'
-  },
-  'grungy 1': {
-    'background-image': 'grungy/01.PNG'
-  },
-  'grungy 2': {
-    'background-image': 'grungy/02.PNG'
-  },
-  'grungy 3': {
-    'background-image': 'grungy/03.PNG'
-  },
-  'grungy 4': {
-    'background-image': 'grungy/04.PNG'
-  },
-  'grungy 5': {
-    'background-image': 'grungy/05.PNG'
-  },
-  'grungy 6': {
-    'background-image': 'grungy/06.PNG'
   }
 };
 
@@ -60,7 +37,7 @@ Template.items.events({
   }
 });
 
-Session.setDefault('background', 'grey');
+Session.setDefault('background', 'classy');
 
 setBackground = function(name) {
   var bg = backgrounds[name];
