@@ -37,7 +37,7 @@ Template.items.events({
   }
 });
 
-Session.setDefault('background', 'grey');
+Session.setDefault('background', 'gum');
 
 setBackground = function(name) {
   var bg = backgrounds[name];
