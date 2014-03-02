@@ -75,9 +75,9 @@ setBackground = function(name) {
 
   _.each(bg, function(value, key) {
     if (key === 'background-image')
-      return $('body').css('background-image', "url('/images/" + value + "')");
-    
-    $('body').css(key, value);
+      $('body').css('background-image', "url('/images/" + value + "')");
+    else
+      $('body').css(key, value);
   });
 };
 
