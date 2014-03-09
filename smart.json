@@ -9,6 +9,7 @@
     "collection-helpers": {},
     "collection-hooks": {},
     "lazy": {},
-    "blaze-layout": {}
+    "blaze-layout": {},
+    "fast-render": {}
   }
 }

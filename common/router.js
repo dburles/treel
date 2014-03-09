@@ -1,5 +1,4 @@
 Router.configure({
-  layoutTemplate: 'layout',
   notFoundTemplate: 'applicationNotFound',
   loadingTemplate: 'applicationLoading'
 });
@@ -17,7 +16,8 @@ Router.map(function() {
       ];
     },
     action: function() {
-      if (! this.ready()) return;
+      if (! this.ready() || Meteor.loggingIn())
+        return;
 
       if (Meteor.user())
         this.render('items');

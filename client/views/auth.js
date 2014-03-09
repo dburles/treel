@@ -29,7 +29,6 @@ Template.auth.events({
 
         _.defer(function() {
           showAlert('Welcome ' + email + ' thanks for signing up!');
-          Router.go('items');
         });
       });
     } catch(error) {
