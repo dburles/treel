@@ -1,4 +1,4 @@
-var backgrounds = {
+backgrounds = {
   'grey': {
     background: '#CCC'
   },
@@ -13,6 +13,9 @@ var backgrounds = {
   },
   'green': {
     background: '#1B503D'
+  },
+  'watermelon': {
+    background: '#FF9DB8'
   }
 };
 

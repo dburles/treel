@@ -103,7 +103,7 @@ table tr td {
   bottom: 33px;
 }
 .note-control-item {
-  color: rgba(153, 153, 153, 0.66);
+  /*color: rgba(153, 153, 153, 0.66);*/
   position: absolute;
   bottom: 0;
   margin: 10px;

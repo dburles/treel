@@ -55,14 +55,14 @@
       
       {{#if isNote}}
         {{#if canCheck}}
-          <i class="fa fa-2x fa-check-circle check left note-control-item action"></i>
+          <i style="color: {{controlColor}}" class="fa fa-2x fa-check-circle check left note-control-item action"></i>
         {{/if}}
       {{else}}
-        <i class="fa fa-arrows move left note-control-item action"></i>
+        <i style="color: {{controlColor}}" class="fa fa-arrows move left note-control-item action"></i>
       {{/if}}
 
       {{#if canDelete}}
-        <i class="fa fa-2x fa-times-circle delete right note-control-item action"></i>
+        <i style="color: {{controlColor}}" class="fa fa-2x fa-times-circle delete right note-control-item action"></i>
       {{/if}}
     </div>
   </td>

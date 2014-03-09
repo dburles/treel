@@ -91,6 +91,12 @@ Template.note.events({
 });
 
 Template.note.helpers({
+  controlColor: function() {
+    // XXX this kinda like breaks a lot of the available options
+    // with the background API, but we're not using them at the moment
+    var user = Meteor.user();
+    return user && user.wallpaper && backgrounds[user.wallpaper].background;
+  },
   isNote: function() {
     return this.itemId;
   },
