@@ -37,8 +37,8 @@
       },
       "collection-hooks": {
         "git": "https://github.com/matb33/meteor-collection-hooks.git",
-        "tag": "v0.6.2",
-        "commit": "29484b2110206be93b01c6d11ce06ec9208de7bd"
+        "tag": "v0.6.3",
+        "commit": "70f2598bf991cb36effd72aea2555cba96f88355"
       },
       "lazy": {
         "git": "https://github.com/dburles/meteor-lazy.git",
@@ -47,8 +47,8 @@
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
-        "tag": "v0.2.0",
-        "commit": "125636d66e7eb250f243bf1ccd1b0067aeb6376c"
+        "tag": "v0.2.1",
+        "commit": "f52f416d6277f27b11832355298553e46b8cc6fd"
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
