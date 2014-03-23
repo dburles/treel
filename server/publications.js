@@ -4,23 +4,23 @@ var privateUserFieldsOption = {
   }
 };
 
-Meteor.publish('items', function() {
-  if (this.userId)
-    return Items.find({ userId: this.userId });
+Meteor.publishAuth = function(name, fn) {
+  Meteor.publish(name, function() {
+    if (! this.userId)
+      return this.ready();
+    
+    return fn.apply(this, arguments);
+  });
+};
 
-  return this.ready();
+Meteor.publishAuth('items', function() {
+  return Items.find({ userId: this.userId });
 });
 
-Meteor.publish('notes', function() {
-  if (this.userId)
-    return Notes.find({ userId: this.userId });
-
-  return this.ready();
+Meteor.publishAuth('notes', function() {
+  return Notes.find({ userId: this.userId });
 });
 
-Meteor.publish('user', function() {
-  if (this.userId)
-    return Meteor.users.find(this.userId, privateUserFieldsOption);
-
-  return this.ready();
+Meteor.publishAuth('user', function() {
+  return Meteor.users.find(this.userId, privateUserFieldsOption);
 });

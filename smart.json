@@ -4,12 +4,10 @@
     "font-awesome": {},
     "iron-router": {
       "git": "https://github.com/EventedMind/iron-router.git",
-      "branch": "blaze-integration"
+      "branch": "dev"
     },
     "collection-helpers": {},
     "collection-hooks": {},
-    "lazy": {},
-    "blaze-layout": {},
-    "fast-render": {}
+    "lazy": {}
   }
 }

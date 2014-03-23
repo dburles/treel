@@ -6,13 +6,11 @@
       "font-awesome": {},
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "branch": "blaze-integration"
+        "branch": "dev"
       },
       "collection-helpers": {},
       "collection-hooks": {},
-      "lazy": {},
-      "blaze-layout": {},
-      "fast-render": {}
+      "lazy": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -27,13 +25,13 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "branch": "blaze-integration",
-        "commit": "f8ffd44bceacc6a55f4ebcc218c072f5a18138b4"
+        "branch": "dev",
+        "commit": "3cfa4c618f6d6dffd209b4c0cb0f1d37c5223c09"
       },
       "collection-helpers": {
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
-        "tag": "v0.2.3",
-        "commit": "52c4c692421acea557fb329f43f65ed11b4832df"
+        "tag": "v0.2.4",
+        "commit": "e10ac53aa03e9656ee8ecaff7b9054dcb3a8a791"
       },
       "collection-hooks": {
         "git": "https://github.com/matb33/meteor-collection-hooks.git",
@@ -47,13 +45,8 @@
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
-        "tag": "v0.2.1",
-        "commit": "f52f416d6277f27b11832355298553e46b8cc6fd"
-      },
-      "fast-render": {
-        "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.1.18",
-        "commit": "dbfc8178594e5f696a39541278aac5dd25d458a0"
+        "branch": "master",
+        "commit": "2664f817844fba0fab0455a79bc62782c9091ad0"
       }
     }
   }

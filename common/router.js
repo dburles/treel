@@ -1,4 +1,5 @@
 Router.configure({
+  layoutTemplate: 'layout',
   notFoundTemplate: 'applicationNotFound',
   loadingTemplate: 'applicationLoading'
 });
@@ -6,7 +7,7 @@ Router.configure({
 Router.map(function() {
   this.route('main', {
     path: '/',
-    before: function() {
+    onBeforeAction: function() {
       this.render(this.options.loadingTemplate);
     },
     waitOn: function() {
@@ -24,7 +25,7 @@ Router.map(function() {
       else
         this.render('home');
     },
-    after: function() {
+    onAfterAction: function() {
       if (this.ready() && Meteor.user() && Items.find().count() === 0)
         Meteor.call('onboarding');
     }
