@@ -8,7 +8,8 @@ Router.map(function() {
   this.route('main', {
     path: '/',
     onBeforeAction: function() {
-      this.render(this.options.loadingTemplate);
+      // this.options.loadingTemplate does not exist anymore
+      this.render('applicationLoading');
     },
     waitOn: function() {
       return [
