@@ -5,7 +5,7 @@ Template.auth.events({
     var password = $('.sign-in input[name="password"]').val();
     Meteor.loginWithPassword(email, password, function(error) {
       if (error)
-        showError(error.message);
+        return showError(error.message);
     });
   },
   'submit .sign-up': function(event, template) {
