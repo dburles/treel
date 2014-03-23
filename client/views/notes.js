@@ -1,7 +1,7 @@
 SimpleRationalRanks = {
-  beforeFirst: function (firstRank) { return parseFloat(firstRank) - 1; },
-  between: function (beforeRank, afterRank) { return (parseFloat(beforeRank) + parseFloat(afterRank)) / 2; },
-  afterLast: function (lastRank) { return parseFloat(lastRank) + 1; }
+  beforeFirst: function (firstRank) { return firstRank - 1; },
+  between: function (beforeRank, afterRank) { return (beforeRank + afterRank) / 2; },
+  afterLast: function (lastRank) { return lastRank + 1; }
 };
 
 Template.items.helpers({
@@ -21,22 +21,20 @@ Template.items.rendered = function() {
       var el = ui.item.get(0), before = ui.item.prev().get(0), after = ui.item.next().get(0);
 
       if (! before) { // moving to the top of the list
-        newRank = SimpleRationalRanks.beforeFirst(
-          $(after).attr('data-rank'));
+        newRank = SimpleRationalRanks.beforeFirst(UI.getElementData(after).rank);
 
       } else if (! after) { // moving to the bottom of the list
-        newRank = SimpleRationalRanks.afterLast(
-          $(before).attr('data-rank'));
+        newRank = SimpleRationalRanks.afterLast(UI.getElementData(before).rank);
 
       } else {
         newRank = SimpleRationalRanks.between(
-          $(before).attr('data-rank'),
-          $(after).attr('data-rank'));
+          UI.getElementData(before).rank,
+          UI.getElementData(after).rank);
       }
 
-      Items.update($(el).attr('data-id'), {$set: {rank: newRank}}, handleMethodError);
+      Items.update(UI.getElementData(el)._id, {$set: {rank: newRank}}, handleMethodError);
     }
-  }).disableSelection();
+  });
 };
 
 Template.items.events({
@@ -101,12 +99,9 @@ Template.note.helpers({
     return this.itemId;
   },
   canDelete: function() {
-    if (! this.itemId) {
-      if (this.notes().count() > 0)
-        return false;
-      if (Items.find().count() === 1)
-        return false;
-    }
+    if (! this.itemId && (this.notes().count() > 0 || Items.find().count() === 1))
+      return false;
+
     return true;
   },
   canCheck: function() {
@@ -120,17 +115,16 @@ Template.note.helpers({
 Template.itemControls.events({
   'click .go-up': function(event, template) {
     event.preventDefault();
-    
-    var before = this.rankedBefore();
-    var after = this.rankedAfter();
+
+    var el = $(template.firstNode).parent();
+    var before = $(el.prev()).attr('data-rank');
+    var after = $(el.next()).attr('data-rank');
     var newRank;
 
     if (! before)
       newRank = SimpleRationalRanks.beforeFirst(this.rank);
-    else if (! after)
-      newRank = SimpleRationalRanks.between(this.rank, before.rank);
     else
-      newRank = SimpleRationalRanks.between(this.rank, before.rank);
+      newRank = SimpleRationalRanks.between(this.rank, parseFloat(before));
     
     var insertId = Items.insert({ rank: newRank }, handleMethodError);
     if (insertId) Session.set('newItemId', insertId);
@@ -138,16 +132,15 @@ Template.itemControls.events({
   'click .go-down': function(event, template) {
     event.preventDefault();
     
-    var before = this.rankedBefore();
-    var after = this.rankedAfter();
+    var el = $(template.firstNode).parent();
+    var before = $(el.prev()).attr('data-rank');
+    var after = $(el.next()).attr('data-rank');
     var newRank;
 
-    if (! before)
-      newRank = SimpleRationalRanks.between(this.rank, after.rank);
-    else if (! after)
+    if (! after)
       newRank = SimpleRationalRanks.afterLast(this.rank);
     else
-      newRank = SimpleRationalRanks.between(before.rank, after.rank);
+      newRank = SimpleRationalRanks.between(this.rank, parseFloat(after));
     
     var insertId = Items.insert({ rank: newRank }, handleMethodError);
     if (insertId) Session.set('newItemId', insertId);
