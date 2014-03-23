@@ -113,6 +113,8 @@ Template.note.helpers({
 });
 
 Template.itemControls.events({
+  // XXX how can we get the data from the previous item in the each loop
+  // using a data attribute feels shit
   'click .go-up': function(event, template) {
     event.preventDefault();
 

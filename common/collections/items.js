@@ -3,14 +3,6 @@ Items = new Meteor.Collection('items');
 Items.helpers({
   notes: function() {
     return Notes.find({ itemId: this._id });
-  },
-  rankedBefore: function() {
-    var items = Items.find({ rank: { $lt: this.rank }}, { sort: { rank: 1 }});
-    return items.count() > 0 && items.fetch()[0];
-  },
-  rankedAfter: function() {
-    var items = Items.find({ rank: { $gt: this.rank }}, { sort: { rank: 1 }});
-    return items.count() > 0 && items.fetch()[0];
   }
 });
 
