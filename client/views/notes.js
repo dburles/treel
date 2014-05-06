@@ -67,6 +67,7 @@ Template.note.events({
       Notes.update(this._id, { $set: { body: body }}, handleMethodError);
 
     Session.set('editing', false);
+    Session.set('newItemId', false);
   },
   'click .delete': function(event, template) {
     var self = this;
