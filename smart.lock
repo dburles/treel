@@ -10,7 +10,8 @@
       },
       "collection-helpers": {},
       "collection-hooks": {},
-      "lazy": {}
+      "lazy": {},
+      "apm": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -26,27 +27,37 @@
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
         "branch": "dev",
-        "commit": "3cfa4c618f6d6dffd209b4c0cb0f1d37c5223c09"
+        "commit": "89949227f251664888ffd90cb09268aec6e20da0"
       },
       "collection-helpers": {
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
-        "tag": "v0.2.4",
-        "commit": "e10ac53aa03e9656ee8ecaff7b9054dcb3a8a791"
+        "tag": "v0.2.8",
+        "commit": "df94190a26414f20aed2dac4228cb3fd5487c5fc"
       },
       "collection-hooks": {
         "git": "https://github.com/matb33/meteor-collection-hooks.git",
-        "tag": "v0.6.3",
-        "commit": "70f2598bf991cb36effd72aea2555cba96f88355"
+        "tag": "v0.6.7",
+        "commit": "f1d2ac629864edda09df6c955fa5ff3df26f739c"
       },
       "lazy": {
         "git": "https://github.com/dburles/meteor-lazy.git",
         "tag": "v0.1.0",
         "commit": "42b55687f1bb0f853fb650d7255115960b126748"
       },
+      "apm": {
+        "git": "https://github.com/arunoda/meteor-apm-client.git",
+        "tag": "v1.3.1",
+        "commit": "0ed9f0d89a31ff186f45130cb0ae508b56f268db"
+      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.5",
+        "commit": "273e3ab7d005d91a1a59c71bd224533b4dae2fbd"
+      },
+      "deps-ext": {
+        "git": "https://github.com/EventedMind/deps-ext.git",
         "branch": "master",
-        "commit": "2664f817844fba0fab0455a79bc62782c9091ad0"
+        "commit": "28447f1abdaebe4be327e891d954c66231c6da0c"
       }
     }
   }
