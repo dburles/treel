@@ -4,10 +4,7 @@
     "basePackages": {
       "bootstrap-3": {},
       "font-awesome": {},
-      "iron-router": {
-        "git": "https://github.com/EventedMind/iron-router.git",
-        "branch": "dev"
-      },
+      "iron-router": {},
       "collection-helpers": {},
       "collection-hooks": {},
       "lazy": {},
@@ -26,8 +23,8 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "branch": "dev",
-        "commit": "89949227f251664888ffd90cb09268aec6e20da0"
+        "tag": "v0.7.1",
+        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
       },
       "collection-helpers": {
         "git": "https://github.com/dburles/meteor-collection-helpers.git",
@@ -51,13 +48,8 @@
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
-        "tag": "v0.2.5",
-        "commit": "273e3ab7d005d91a1a59c71bd224533b4dae2fbd"
-      },
-      "deps-ext": {
-        "git": "https://github.com/EventedMind/deps-ext.git",
-        "branch": "master",
-        "commit": "28447f1abdaebe4be327e891d954c66231c6da0c"
+        "tag": "v0.2.4",
+        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
       }
     }
   }

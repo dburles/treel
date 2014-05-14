@@ -2,10 +2,7 @@
   "packages": {
     "bootstrap-3": {},
     "font-awesome": {},
-    "iron-router": {
-      "git": "https://github.com/EventedMind/iron-router.git",
-      "branch": "dev"
-    },
+    "iron-router": {},
     "collection-helpers": {},
     "collection-hooks": {},
     "lazy": {},
