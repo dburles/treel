@@ -7,14 +7,13 @@
       "iron-router": {},
       "collection-helpers": {},
       "collection-hooks": {},
-      "lazy": {},
-      "apm": {}
+      "lazy": {}
     },
     "packages": {
       "bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
-        "tag": "v3.1.1-1",
-        "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+        "tag": "v3.2.0-1",
+        "commit": "17a63902fc6cf1096c5289d963c66cf28b474727"
       },
       "font-awesome": {
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
@@ -33,18 +32,13 @@
       },
       "collection-hooks": {
         "git": "https://github.com/matb33/meteor-collection-hooks.git",
-        "tag": "v0.6.7",
-        "commit": "f1d2ac629864edda09df6c955fa5ff3df26f739c"
+        "tag": "v0.7.2",
+        "commit": "261f61f07b371ae913463fba8964a9b93cab531b"
       },
       "lazy": {
         "git": "https://github.com/dburles/meteor-lazy.git",
         "tag": "v0.1.0",
         "commit": "42b55687f1bb0f853fb650d7255115960b126748"
-      },
-      "apm": {
-        "git": "https://github.com/arunoda/meteor-apm-client.git",
-        "tag": "v1.4.3",
-        "commit": "547c695b67a1b32b56f6a9790bd68ee0a014a8f0"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
