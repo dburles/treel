@@ -17,6 +17,7 @@
       {{#each backgrounds}}
         <li class="set-wp action" data-name="{{name}}">{{count}}</li>
       {{/each}}
+      <li class="set-color action">C</li>
     </ul>
   </div>
 </template>
@@ -49,7 +50,7 @@
 
 <template name="note">
   <td>
-    <div class="box {{#if checked}}checked{{/if}} {{#if isNote}}note{{else}}item{{/if}} {{#if isEditing}}editing{{/if}}">
+    <div style="{{#if currentUser.showColors}}background: {{color}}{{/if}}" class="box {{#if checked}}checked{{/if}} {{#if isNote}}note{{else}}item{{/if}} {{#if isEditing}}editing{{/if}}">
       
       {{> textarea}}
       

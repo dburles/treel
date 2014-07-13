@@ -16,6 +16,9 @@ backgrounds = {
   },
   'watermelon': {
     background: '#FF9DB8'
+  },
+  'black': {
+    background: '#000'
   }
 };
 

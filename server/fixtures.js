@@ -20,4 +20,14 @@ Meteor.startup(function() {
       });
     }
   });
+  
+  Meteor.users.update({ showColors: { $exists: false }}, { $set: { showColors: false }});
+  
+  Items.find({ color: { $exists: false }}).forEach(function(doc) {
+    Items.update(doc._id, { $set: { color: makeRandomColor() }});
+  });
+  
+  Notes.find({ color: { $exists: false }}).forEach(function(doc) {
+    Items.update(doc._id, { $set: { color: makeRandomColor() }});
+  });
 });

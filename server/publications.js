@@ -1,5 +1,6 @@
 var privateUserFieldsOption = {
   fields: {
+    showColors: true,
     wallpaper: true
   }
 };

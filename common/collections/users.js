@@ -7,9 +7,9 @@ Meteor.users.helpers({
 Meteor.users.allow({
   update: function (userId, doc, fields, modifier) {
     if (doc._id !== userId)
-      return;
+      return false;
 
-    if (modifier.$set.wallpaper)
+    if (_.contains(fields, 'wallpaper') || _.contains(fields, 'showColors'))
       return true;
   }
 });

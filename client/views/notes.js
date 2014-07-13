@@ -40,6 +40,10 @@ Template.items.rendered = function() {
 Template.items.events({
   'click .sign-out': function() {
     Meteor.logout();
+  },
+  'click .set-color': function() {
+    var currentSettings = Meteor.user().showColors;
+    Meteor.users.update(Meteor.userId(), { $set: { showColors: ! currentSettings }});
   }
 });
 
@@ -129,7 +133,7 @@ Template.itemControls.events({
     else
       newRank = SimpleRationalRanks.between(this.rank, parseFloat(before));
     
-    var insertId = Items.insert({ rank: newRank }, handleMethodError);
+    var insertId = Items.insert({ rank: newRank, color: makeRandomColor() }, handleMethodError);
     if (insertId) Session.set('newItemId', insertId);
   },
   'click .go-down': function(event, template) {
@@ -145,13 +149,13 @@ Template.itemControls.events({
     else
       newRank = SimpleRationalRanks.between(this.rank, parseFloat(after));
     
-    var insertId = Items.insert({ rank: newRank }, handleMethodError);
+    var insertId = Items.insert({ rank: newRank, color: makeRandomColor() }, handleMethodError);
     if (insertId) Session.set('newItemId', insertId);
   },
   'click .go-right': function(event, template) {
     event.preventDefault();
 
-    var insertId = Notes.insert({ itemId: this._id }, handleMethodError);
+    var insertId = Notes.insert({ itemId: this._id, color: makeRandomColor() }, handleMethodError);
     if (insertId) Session.set('newItemId', insertId);
   }
 });
