@@ -28,6 +28,6 @@ Meteor.startup(function() {
   });
   
   Notes.find({ color: { $exists: false }}).forEach(function(doc) {
-    Items.update(doc._id, { $set: { color: makeRandomColor() }});
+    Notes.update(doc._id, { $set: { color: makeRandomColor() }});
   });
 });
