@@ -1,6 +1,6 @@
 treel
 =====
 
-Note: This is an old project (Meteor 0.8.2). I may update it at some point.
+Updated to Meteor 1.0.3.2
 
 http://treel.meteor.com/
