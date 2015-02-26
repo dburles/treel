@@ -14,7 +14,7 @@ Template.items.helpers({
 });
 
 Template.items.rendered = function() {
-  $('table tbody').sortable({
+  this.$('table tbody').sortable({
     handle: 'i.move',
     stop: function (event, ui) {
       var newRank;
@@ -110,7 +110,7 @@ Template.note.helpers({
     return true;
   },
   canCheck: function() {
-    return !!this.body;
+    return !! this.body;
   },
   isEditing: function() {
     return Session.equals('editing', this._id);
@@ -123,9 +123,9 @@ Template.itemControls.events({
   'click .go-up': function(event, template) {
     event.preventDefault();
 
-    var el = $(template.firstNode).parent();
-    var before = $(el.prev()).attr('data-rank');
-    var after = $(el.next()).attr('data-rank');
+    var el = template.$(template.firstNode).parent();
+    var before = template.$(el.prev()).attr('data-rank');
+    var after = template.$(el.next()).attr('data-rank');
     var newRank;
 
     if (! before)
@@ -139,9 +139,9 @@ Template.itemControls.events({
   'click .go-down': function(event, template) {
     event.preventDefault();
     
-    var el = $(template.firstNode).parent();
-    var before = $(el.prev()).attr('data-rank');
-    var after = $(el.next()).attr('data-rank');
+    var el = template.$(template.firstNode).parent();
+    var before = template.$(el.prev()).attr('data-rank');
+    var after = template.$(el.next()).attr('data-rank');
     var newRank;
 
     if (! after)
@@ -161,7 +161,7 @@ Template.itemControls.events({
 });
 
 Template.textarea.rendered = function() {
-  var elem = $(this.find('textarea'));
+  var elem = this.$('textarea');
   elem.expanding();
 
   if (Session.get('newItemId') === this.data._id)

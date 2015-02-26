@@ -4,12 +4,11 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-bootstrap-3
-font-awesome
-iron-router
-collection-helpers
+twbs:bootstrap
+fortawesome:fontawesome
+iron:router
+dburles:collection-helpers
 accounts-password
-collection-hooks
-lazy
+matb33:collection-hooks
+dburles:lazy
 less
-blaze-layout
